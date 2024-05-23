@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Imagem de Fundo</title>
+    <!-- Link para o CSS do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('fundoIndex.png');
+            background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+            background-repeat: no-repeat; /* Não repete a imagem */
+            background-position: center center; /* Centraliza a imagem */
+            height: 100vh; /* Define a altura da página para 100% da altura da janela de visualização */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Impede a rolagem da página */
+        }
+        .content {
+            text-align: center;
+        }
+        h1 {
+            color: white; /* Define a cor do h1 como preta */
+            text-shadow: 0 0 10px rgba(234, 234, 234, 0.974); /* Adiciona um sombreamento nas letras */
+            background-color: rgb(255, 0, 234); /* Define um fundo semi-transparente */
+            padding: 10px; /* Adiciona um espaço interno para o texto */
+            border-radius: 5px; /* Adiciona bordas arredondadas */
+        }
+    </style>
+
+    <script>
+
+        let count = 0;
+
+        function contarCliques() {
+            count++;
+            if (count > 0)
+            {
+                document.getElementById("count").innerText = "PS: Eu sei que tentaste clicar no botão não " + count + " vezes 😒";
+            }
+        }
+
+        function moveButton() {
+            const button = document.getElementById('button2');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.position = 'absolute';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+
+            contarCliques();
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h1>Tu me amas ????</h1>
+        <div>
+            <button type="button" class="btn btn-success mx-2" data-toggle="modal" data-target="#myModal" >Sim</button>
+            <button type="button" id="button2" class="btn btn-danger mx-2" onclick="moveButton()">Não</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Eu tambem te amooooooooooooo!!🧡🧡🧡🧡🧡</p>
+                    <p id = "count"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script do JavaScript do Bootstrap (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
